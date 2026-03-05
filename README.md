@@ -140,7 +140,7 @@ This tool accompanies the paper:
 > Nwasra, N., Alraddadi, A.S., & Arafah, M. (2026). "Embedding Usability Heuristics in CI/CD Pipelines: A Mixed-Methods Approach for Proactive UX Assurance."
 
 - **Dataset**: [Zenodo](https://doi.org/10.5281/zenodo.18749928)
-- **Pre-registration**: [OSF](https://osf.io/ur3tz)
+
 
 ## License
 
