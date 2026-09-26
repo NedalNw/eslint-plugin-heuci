@@ -1,13 +1,13 @@
 # eslint-plugin-heuci
-
-**HeuCI: Embedding Nielsen's Usability Heuristics in CI/CD Pipelines**
-
+ 
+**HeuCI: Embedding Nielsen's Usability Heuristics in Continuous Integration and Delivery (CI/CD) Pipelines**
+ 
 An ESLint plugin that operationalizes Nielsen's usability heuristics as automated code checks for React and Angular projects. Integrates directly into CI/CD pipelines (GitHub Actions, Jenkins, GitLab CI) for proactive usability assurance.
-
+ 
 ## Overview
-
+ 
 HeuCI implements 12 rules derived from Nielsen's usability heuristics through a rigorous three-phase operationalization process (37 candidate rules → 19 validated → 12 final). The rules combine static analysis (ESLint AST traversal) with dynamic analysis (Puppeteer-based runtime testing).
-
+ 
 | Rule | Heuristic | Method | Category |
 |------|-----------|--------|----------|
 | H01 | Visibility of system status | Static | Consistency |
@@ -22,40 +22,40 @@ HeuCI implements 12 rules derived from Nielsen's usability heuristics through a 
 | H10 | Accessibility | Static | Accessibility |
 | H11 | Navigation consistency | Dynamic | Navigation |
 | H12 | Responsiveness | Dynamic | Responsiveness |
-
+ 
 ## Installation
-
+ 
 ```bash
 npm install eslint-plugin-heuci --save-dev
 ```
-
+ 
 For dynamic analysis rules (H11, H12):
 ```bash
 npm install puppeteer --save-dev
 ```
-
+ 
 ## Configuration
-
+ 
 ### ESLint Config (Static Rules)
-
+ 
 ```json
 {
   "plugins": ["heuci"],
   "extends": ["plugin:heuci/recommended"]
 }
 ```
-
+ 
 ### Strict Mode (All Rules as Errors)
-
+ 
 ```json
 {
   "plugins": ["heuci"],
   "extends": ["plugin:heuci/strict"]
 }
 ```
-
+ 
 ### Individual Rule Configuration
-
+ 
 ```json
 {
   "plugins": ["heuci"],
@@ -66,11 +66,11 @@ npm install puppeteer --save-dev
   }
 }
 ```
-
+ 
 ## CI/CD Integration
-
+ 
 ### GitHub Actions
-
+ 
 ```yaml
 name: HeuCI Usability Checks
 on: [push, pull_request]
@@ -90,9 +90,9 @@ jobs:
           node node_modules/eslint-plugin-heuci/lib/dynamic/H11-navigation-flow-consistency.js --url http://localhost:3000
           node node_modules/eslint-plugin-heuci/lib/dynamic/H12-responsive-breakpoints.js --url http://localhost:3000
 ```
-
+ 
 ### Jenkins Pipeline
-
+ 
 ```groovy
 pipeline {
   agent any
@@ -106,9 +106,9 @@ pipeline {
   }
 }
 ```
-
+ 
 ### GitLab CI
-
+ 
 ```yaml
 usability:
   stage: test
@@ -116,11 +116,11 @@ usability:
     - npx eslint --plugin heuci --ext .jsx,.tsx src/
     - node node_modules/eslint-plugin-heuci/lib/dynamic/H11-navigation-flow-consistency.js --url $APP_URL
 ```
-
+ 
 ## Exemptions
-
+ 
 Configure project-specific exemptions in `.heuci.config.json`:
-
+ 
 ```json
 {
   "exemptions": [
@@ -132,16 +132,18 @@ Configure project-specific exemptions in `.heuci.config.json`:
   ]
 }
 ```
-
+ 
 ## Research
-
+ 
 This tool accompanies the paper:
-
-> Nwasra, N., Ali, N., & Arafah, M. (2026). "Embedding Usability Heuristics in CI/CD Pipelines: A Mixed-Methods Approach for Proactive UX Assurance."
-
-- **Dataset**: [Zenodo](https://doi.org/10.5281/zenodo.18749928)
-
-
+ 
+> Nwasra, N., Ali, N., & Arafah, M. (2026). Embedding usability heuristics in continuous integration and delivery pipelines: a mixed-methods approach to proactive user experience assurance. *PeerJ Computer Science*.
+ 
+- **Dataset (version 1.1)**: [Zenodo](https://doi.org/10.5281/zenodo.22979774)
+## Citing this software
+ 
+If you use HeuCI, please cite the paper above. Each tagged release of this repository is archived on Zenodo with its own DOI.
+ 
 ## License
-
+ 
 MIT
