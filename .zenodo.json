@@ -1,0 +1,14 @@
+{
+  "title": "eslint-plugin-heuci: HeuCI usability heuristic checks for CI/CD pipelines",
+  "upload_type": "software",
+  "description": "ESLint plugin (static rules H01–H10) and Puppeteer-based dynamic checks (H11–H12) implementing the HeuCI approach described in the accompanying PeerJ Computer Science article.",
+  "creators": [
+    {"name": "Nwasra, Nedal", "affiliation": "University of Petra", "orcid": "0009-0005-9323-685X"}
+  ],
+  "license": "MIT",
+  "version": "1.0.0",
+  "keywords": ["usability heuristics", "CI/CD", "ESLint", "static analysis", "user experience"],
+  "related_identifiers": [
+    {"identifier": "10.5281/zenodo.22979774", "relation": "isSupplementedBy", "scheme": "doi"}
+  ]
+}
