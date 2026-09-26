@@ -1,6 +1,7 @@
 # eslint-plugin-heuci
  
 **HeuCI: Embedding Nielsen's Usability Heuristics in Continuous Integration and Delivery (CI/CD) Pipelines**
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22982656.svg)](https://doi.org/10.5281/zenodo.22982656)
  
 An ESLint plugin that operationalizes Nielsen's usability heuristics as automated code checks for React and Angular projects. Integrates directly into CI/CD pipelines (GitHub Actions, Jenkins, GitLab CI) for proactive usability assurance.
  
